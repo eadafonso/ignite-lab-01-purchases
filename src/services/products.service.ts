@@ -11,6 +11,14 @@ interface CreateProductParams {
 export class ProductsService {
   constructor(private prisma: PrismaService) {}
 
+  getProductById(id: string) {
+    return this.prisma.product.findUnique({
+      where: {
+        id,
+      },
+    });
+  }
+
   async listAllProducts() {
     return this.prisma.product.findMany();
   }

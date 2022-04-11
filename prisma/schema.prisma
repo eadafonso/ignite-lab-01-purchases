@@ -10,7 +10,7 @@ datasource db {
 model Customer {
   id String @id @default(uuid())
 
-  //authUserId String? @unique
+  authUserId String? @unique
 
   purchases Purchase[]
 
